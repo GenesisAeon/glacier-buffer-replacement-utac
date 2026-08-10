@@ -1,0 +1,103 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+type: software
+authors:
+  - family-names: Römer
+    given-names: Johann
+    affiliation: "MOR Research Collective"
+title: "glacier-buffer-replacement-utac"
+version: "1.0.0"
+date-released: "2026-08-10"
+url: "https://github.com/GenesisAeon/glacier-buffer-replacement-utac"
+repository-code: "https://github.com/GenesisAeon/glacier-buffer-replacement-utac"
+license: MIT
+abstract: "Artificial Glacier Buffer Replacement (AGBR) science -- proglacial reservoirs, sedimentation limits, Managed Aquifer Recharge, floating-solar evaporation mitigation, and the real mass-balance ceiling on full replacement (Farinotti et al. 2016), plus a clearly-flagged speculative Resilience Replacement Factor / scenario layer. Deliberately no UTAC/CREP/AFET bridge. GenesisAeon P100, companion to glacier-buffer-utac (P99)."
+keywords:
+  - GenesisAeon
+  - P100
+  - climate
+  - glacier
+  - hydrology
+  - managed-aquifer-recharge
+  - floating-solar
+  - open-science
+references:
+  - type: article
+    title: "From dwindling ice to headwater lakes: could dams replace glaciers in the European Alps?"
+    authors:
+      - name: "Farinotti, D."
+      - name: "Pistocchi, A."
+      - name: "Huss, M."
+    year: 2016
+    journal: "Environmental Research Letters"
+    volume: 11
+    issue: 5
+    doi: "10.1088/1748-9326/11/5/054022"
+  - type: article
+    title: "Volume, evolution, and sedimentation of future glacier lakes in Switzerland over the 21st century"
+    authors:
+      - name: "Steffen, T."
+      - name: "Huss, M."
+      - name: "Estermann, R."
+      - name: "Hodel, E."
+      - name: "Farinotti, D."
+    year: 2022
+    journal: "Earth Surface Dynamics"
+    volume: 10
+    start: 723
+    doi: "10.5194/esurf-10-723-2022"
+  - type: article
+    title: "Subaqueous geomorphology and delta dynamics of Lake Brienz (Switzerland): implications for the sediment budget in the alpine realm"
+    authors:
+      - name: "Fabbri, S.C."
+      - name: "Haas, I."
+      - name: "Kremer, K."
+      - name: "Motta, D."
+      - name: "Girardclos, S."
+      - name: "Anselmetti, F.S."
+    year: 2021
+    journal: "Swiss Journal of Geosciences"
+    volume: 114
+    doi: "10.1186/s00015-021-00399-1"
+  - type: article
+    title: "Potential contributions of pre-Inca infiltration infrastructure to Andean water security"
+    authors:
+      - name: "Ochoa-Tocachi, B.F."
+      - name: "Bardales, J.D."
+      - name: "Antiporta, J."
+      - name: "Buytaert, W."
+    year: 2019
+    journal: "Nature Sustainability"
+    volume: 2
+    start: 584
+    doi: "10.1038/s41893-019-0307-1"
+  - type: article
+    title: "Artificial recharge by means of careo channels versus natural aquifer recharge in a semi-arid, high-mountain watershed (Sierra Nevada, Spain)"
+    authors:
+      - name: "Jodar, J."
+      - name: "Zakaluk, T."
+      - name: "Martos-Rosillo, S."
+    year: 2022
+    journal: "Science of the Total Environment"
+    volume: 825
+    doi: "10.1016/j.scitotenv.2022.153937"
+  - type: article
+    title: "Energy production and water savings from floating solar photovoltaics on global reservoirs"
+    authors:
+      - name: "Jin, Y."
+      - name: "Hu, S."
+      - name: "Ziegler, A.D."
+    year: 2023
+    journal: "Nature Sustainability"
+    volume: 6
+    start: 865
+    doi: "10.1038/s41893-023-01089-6"
+  - type: article
+    title: "Evaporation reduction and energy generation potential using floating photovoltaic power plants on the Aswan High Dam Reservoir"
+    authors:
+      - name: "Ilgen, K."
+    year: 2024
+    journal: "Hydrological Sciences Journal"
+    volume: 69
+    issue: 6
+    doi: "10.1080/02626667.2024.2332625"
