@@ -54,6 +54,7 @@ from .reservoir import (
     SWISS_ALPS_LAKE_POTENTIAL,
     ProglacialLakePotential,
     remaining_usable_volume_fraction,
+    sediment_volume_loss_from_mass_input_m3,
     sedimentation_volume_loss_m3,
     volume_realized_km3,
 )
@@ -67,7 +68,7 @@ from .rrf import (
     resilience_replacement_factor,
 )
 
-__version__ = "1.0.0"
+__version__ = "1.1.0"
 
 __all__ = [
     "ACEQUIAS_RECHARGE_INCREASE_PCT",
@@ -104,6 +105,7 @@ __all__ = [
     "remaining_usable_volume_fraction",
     "resilience_replacement_factor",
     "restoration_cost_eur_per_ha_range",
+    "sediment_volume_loss_from_mass_input_m3",
     "sedimentation_volume_loss_m3",
     "sierra_nevada_recharge_increase_pct",
     "storage_capacity_m3_per_ha_range",

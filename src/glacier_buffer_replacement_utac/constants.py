@@ -73,6 +73,16 @@ STEFFEN_NOTE = (
     "overstates the near-term picture."
 )
 
+# Bulk density of deposited glaciolacustrine sediment, kg/m^3 -- used to
+# convert a sediment MASS input rate into a volume-loss rate (see
+# reservoir.sediment_volume_loss_from_mass_input_m3). Attributed to the
+# same Steffen et al. (2022) source as the proglacial-lake figures above;
+# this specific density value was not independently re-verified in a
+# fresh 2026-08-11 lookup (added 2026-08-11 from a later revision of the
+# AGBR source report, "Ersatz alpiner Gletscherpuffer+AuswirkungenTektonik.md",
+# section 4.2) -- treat it as documented, not re-confirmed.
+SEDIMENT_DENSITY_KG_PER_M3 = 2200.0
+
 # --- Fabbri, Haas, Kremer, Motta, Girardclos & Anselmetti 2021: sedimentation ---
 
 FABBRI_2021_CITATION = (

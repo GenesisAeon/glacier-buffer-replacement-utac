@@ -4,6 +4,16 @@
 weakly sourced or literally unpublished, always flagged. NO UTAC/CREP/
 AFET bridge.**
 
+**v1.1.0 (2026-08-11)** adds `sediment_volume_loss_from_mass_input_m3()`
+to `reservoir.py`: a mass-balance sedimentation model (sediment mass
+input / bulk density = volume loss), complementing the existing
+area×rate×time model. The ~2200 kg/m³ default density is attributed to
+the same Steffen et al. (2022) source already cited below, but — unlike
+every other core-tier figure in this file — that specific density value
+was *not* independently re-verified via a fresh 2026-08-11 lookup; it
+was carried over from a later revision of the source AGBR report. Treat
+it as documented, not re-confirmed, until checked directly.
+
 ## Core tier — real, independently re-verified 2026-08-10
 
 Every figure below was checked directly against the paper (DOI lookup,

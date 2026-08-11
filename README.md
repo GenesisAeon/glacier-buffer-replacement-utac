@@ -29,6 +29,12 @@ has no UTAC/CREP/AFET bridge** — see [DISCLAIMER.md](DISCLAIMER.md).
 - Fabbri et al. (2021, *Swiss Journal of Geosciences*): real Lake Brienz
   sedimentation rates (3.0 cm/yr average, up to 4.7 cm/yr near deltas) —
   the physical limiter on how long a proglacial reservoir stays useful.
+  **v1.1.0** adds a second, mass-balance-based sedimentation model,
+  `sediment_volume_loss_from_mass_input_m3()`: given a sediment mass
+  input rate (kg/yr), converts it to a volume-loss rate via a bulk
+  sediment density of ~2200 kg/m³ (attributed to the same Steffen et
+  al. 2022 source as the proglacial-lake figures, though this specific
+  density value wasn't independently re-verified — see DISCLAIMER.md).
 - Ochoa-Tocachi et al. (2019, *Nature Sustainability*) and Jodar et al.
   (2022, *Science of the Total Environment*): two real, operating
   Managed Aquifer Recharge systems (Peruvian amunas, Spanish acequias de

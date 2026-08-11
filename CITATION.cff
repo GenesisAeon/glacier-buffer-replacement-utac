@@ -6,8 +6,8 @@ authors:
     given-names: Johann
     affiliation: "MOR Research Collective"
 title: "glacier-buffer-replacement-utac"
-version: "1.0.0"
-date-released: "2026-08-10"
+version: "1.1.0"
+date-released: "2026-08-11"
 url: "https://github.com/GenesisAeon/glacier-buffer-replacement-utac"
 repository-code: "https://github.com/GenesisAeon/glacier-buffer-replacement-utac"
 license: MIT

@@ -15,6 +15,7 @@ from .constants import (
     POTENTIAL_LAKE_VOLUME_KM3_RANGE,
     REALIZED_LAKE_VOLUME_FRACTION_BY_2050,
     REALIZED_LAKE_VOLUME_FRACTION_BY_2100,
+    SEDIMENT_DENSITY_KG_PER_M3,
     STEFFEN_2022_CITATION,
 )
 
@@ -106,3 +107,32 @@ def remaining_usable_volume_fraction(
     lost = sedimentation_volume_loss_m3(surface_area_m2, years, rate_cm_per_yr)
     remaining = (initial_volume_m3 - lost) / initial_volume_m3
     return max(0.0, min(1.0, remaining))
+
+
+def sediment_volume_loss_from_mass_input_m3(
+    sediment_mass_input_rate_kg_per_yr: float,
+    years: float,
+    density_kg_per_m3: float = SEDIMENT_DENSITY_KG_PER_M3,
+) -> float:
+    """Cumulative reservoir volume lost, given a sediment MASS input rate.
+
+    volume_loss = (mass_input_rate * years) / density -- the mass-balance
+    formulation added in a later revision of the AGBR source report
+    ("Ersatz alpiner Gletscherpuffer+AuswirkungenTektonik.md", section
+    4.2), complementing sedimentation_volume_loss_m3()'s simpler
+    area x rate x time model. The report notes the mass input rate itself
+    depends strongly on glacial abrasion and the size of newly-exposed
+    proglacial area -- neither is quantified here, so callers must supply
+    sediment_mass_input_rate_kg_per_yr from their own basin-specific
+    estimate; this function only does the mass -> volume conversion.
+    """
+    if sediment_mass_input_rate_kg_per_yr < 0:
+        raise ValueError(
+            "sediment_mass_input_rate_kg_per_yr must be non-negative, got "
+            f"{sediment_mass_input_rate_kg_per_yr}"
+        )
+    if years < 0:
+        raise ValueError(f"years must be non-negative, got {years}")
+    if density_kg_per_m3 <= 0:
+        raise ValueError(f"density_kg_per_m3 must be positive, got {density_kg_per_m3}")
+    return (sediment_mass_input_rate_kg_per_yr * years) / density_kg_per_m3

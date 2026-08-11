@@ -23,6 +23,7 @@ from glacier_buffer_replacement_utac import (
     remaining_usable_volume_fraction,
     resilience_replacement_factor,
     restoration_cost_eur_per_ha_range,
+    sediment_volume_loss_from_mass_input_m3,
     sedimentation_volume_loss_m3,
     sierra_nevada_recharge_increase_pct,
     storage_capacity_m3_per_ha_range,
@@ -32,7 +33,7 @@ from glacier_buffer_replacement_utac import (
 
 
 def test_version():
-    assert __version__ == "1.0.0"
+    assert __version__ == "1.1.0"
 
 
 def test_package_id():
@@ -121,6 +122,46 @@ def test_remaining_usable_volume_fraction_at_zero_years():
     assert remaining_usable_volume_fraction(
         initial_volume_m3=1000, surface_area_m2=1_000_000, years=0
     ) == pytest.approx(1.0)
+
+
+def test_sediment_volume_loss_from_mass_input_basic():
+    # 2200 kg/yr of sediment at the default 2200 kg/m^3 density -> 1 m^3/yr
+    loss = sediment_volume_loss_from_mass_input_m3(
+        sediment_mass_input_rate_kg_per_yr=2200.0, years=1.0
+    )
+    assert loss == pytest.approx(1.0)
+
+
+def test_sediment_volume_loss_from_mass_input_scales_with_years():
+    loss_1y = sediment_volume_loss_from_mass_input_m3(
+        sediment_mass_input_rate_kg_per_yr=2200.0, years=1.0
+    )
+    loss_5y = sediment_volume_loss_from_mass_input_m3(
+        sediment_mass_input_rate_kg_per_yr=2200.0, years=5.0
+    )
+    assert loss_5y == pytest.approx(5 * loss_1y)
+
+
+def test_sediment_volume_loss_from_mass_input_custom_density():
+    loss = sediment_volume_loss_from_mass_input_m3(
+        sediment_mass_input_rate_kg_per_yr=1000.0, years=2.0, density_kg_per_m3=500.0
+    )
+    assert loss == pytest.approx(4.0)
+
+
+def test_sediment_volume_loss_from_mass_input_rejects_bad_input():
+    with pytest.raises(ValueError, match="non-negative"):
+        sediment_volume_loss_from_mass_input_m3(
+            sediment_mass_input_rate_kg_per_yr=-1.0, years=1.0
+        )
+    with pytest.raises(ValueError, match="non-negative"):
+        sediment_volume_loss_from_mass_input_m3(
+            sediment_mass_input_rate_kg_per_yr=1.0, years=-1.0
+        )
+    with pytest.raises(ValueError, match="positive"):
+        sediment_volume_loss_from_mass_input_m3(
+            sediment_mass_input_rate_kg_per_yr=1.0, years=1.0, density_kg_per_m3=0.0
+        )
 
 
 # --- mar.py (core) ---------------------------------------------------------
