@@ -5,6 +5,9 @@ GenesisAeon Package 100 — companion to [glacier-buffer-utac](https://github.co
 side: **Artificial Glacier Buffer Replacement (AGBR)**. **Deliberately
 has no UTAC/CREP/AFET bridge** — see [DISCLAIMER.md](DISCLAIMER.md).
 
+For a plain-language explanation of the same topic (German, no jargon,
+written for general audiences), see [WHITEPAPER.md](WHITEPAPER.md).
+
 ## Two explicit confidence tiers
 
 - **Core** (`reservoir`, `mar`, `evaporation`, `mass_balance`): real,
